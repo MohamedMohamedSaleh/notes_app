@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants/colors.dart';
+import '../../constants/colors.dart';
 
 import 'custom_search_icon.dart';
 
