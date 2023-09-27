@@ -14,9 +14,10 @@ class NotesView extends StatelessWidget {
         backgroundColor: myBlackLight,
         onPressed: () {
           showModalBottomSheet(
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(16)
-              ),
+              shape: const BeveledRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16))),
               context: context,
               builder: (context) {
                 return const AddNoteBottomSheet();
@@ -32,4 +33,3 @@ class NotesView extends StatelessWidget {
     );
   }
 }
-
