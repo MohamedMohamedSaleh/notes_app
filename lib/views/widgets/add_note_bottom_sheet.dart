@@ -26,7 +26,7 @@ class AddNoteForm extends StatefulWidget {
 }
 
 class _AddNoteFormState extends State<AddNoteForm> {
-  final GlobalKey<FormState> formKey = GlobalKey();
+  final GlobalKey<FormState> _formKey = GlobalKey();
   AutovalidateMode autovalidateMode =
       AutovalidateMode.disabled; // to show error
 
@@ -34,7 +34,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
+      key: _formKey,
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
@@ -60,13 +60,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
           CustomButton(
             //validate the input and type it if invalid
             onTap: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
+              if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
               } else {
                 autovalidateMode = AutovalidateMode.always;
-                setState(() {
-                  
-                });
+                setState(() {});
               }
             },
           ),
